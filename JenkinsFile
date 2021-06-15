@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('compile') {
+            steps {
+                echo 'This is compilation'
+		bat """ javac JenkinsDemo.java """
+            }
+        }
+        stage('run') {
+            steps {
+                echo 'This is running'
+		bat """ java JenkinsDemo """
+            }
+        }
+    }
+}
